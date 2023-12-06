@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_application/pages/home/food_page_body.dart';
+import 'package:food_delivery_application/pages/home/home_page.dart';
 import 'package:food_delivery_application/utils/colors.dart';
 import 'package:food_delivery_application/utils/dimensions.dart';
 import 'package:food_delivery_application/widgets/big_text.dart';
@@ -31,7 +32,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     Row(
                       children: [
                         SmallText(
-                          text: "Narsingdi",
+                          text: "Trujillo",
                           color: Colors.black54,
                         ),
                         const Icon(Icons.arrow_drop_down_rounded),
@@ -54,13 +55,15 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
           // showing the body
-          Expanded(child: SingleChildScrollView(
+          const Expanded(child: SingleChildScrollView(
             child: FoodPageBody(),
           )),
 
-          // const FoodPageBody()
 
+   
+          
         ],
+        
       ),
     );
   }

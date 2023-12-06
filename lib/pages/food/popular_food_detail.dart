@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_application/controllers/popular_product_controller.dart';
 import 'package:food_delivery_application/pages/home/main_food_page.dart';
 import 'package:food_delivery_application/utils/colors.dart';
 import 'package:food_delivery_application/utils/dimensions.dart';
@@ -6,12 +7,14 @@ import 'package:food_delivery_application/widgets/app_column.dart';
 import 'package:food_delivery_application/widgets/app_icon.dart';
 import 'package:food_delivery_application/widgets/big_text.dart';
 import 'package:food_delivery_application/widgets/expandable_text_widget.dart';
+import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.find<PopularProductController>().initProduct();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -39,7 +42,7 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: () {
-                        MainFoodPage();
+                        Get.to(()=> MainFoodPage());
                       },
                       child: const AppIcon(icon: Icons.arrow_back_ios)),
                   const AppIcon(icon: Icons.shopping_cart_outlined),
@@ -82,7 +85,8 @@ class PopularFoodDetail extends StatelessWidget {
               )),
         ],
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: GetBuilder<PopularProductController>(builder: (popularProduct){
+        return Container(
         height: Dimensions.bottomHeightBar,
         padding: EdgeInsets.only(
             top: Dimensions.height30,
@@ -108,20 +112,30 @@ class PopularFoodDetail extends StatelessWidget {
                   color: Colors.white),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.remove,
-                    color: AppColors.signColor,
+                  GestureDetector(
+                    onTap: (){
+                      popularProduct.setQuantity(false);
+                    },
+                    child: Icon(
+                      Icons.remove,
+                      color: AppColors.signColor,
+                    ),
                   ),
                   SizedBox(
                     width: Dimensions.width10 / 2,
                   ),
-                  BigText(text: "0"),
+                  BigText(text: popularProduct.quantity.toString()),
                   SizedBox(
                     width: Dimensions.width10 / 2,
                   ),
-                  Icon(
-                    Icons.add,
-                    color: AppColors.signColor,
+                  GestureDetector(
+                    onTap: (){
+                      popularProduct.setQuantity(true);
+                    },
+                    child: Icon(
+                      Icons.add,
+                      color: AppColors.signColor,
+                    ),
                   ),
                 ],
               ),
@@ -143,7 +157,8 @@ class PopularFoodDetail extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      );
+      })
     );
   }
 }
