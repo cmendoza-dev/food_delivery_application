@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_application/pages/account/account_page.dart';
-import 'package:food_delivery_application/pages/auth/sign_up_page.dart';
+import 'package:food_delivery_application/pages/cart/cart_history.dart';
+import 'package:food_delivery_application/pages/cart/cart_page.dart';
 import 'package:food_delivery_application/pages/home/main_food_page.dart';
 import 'package:food_delivery_application/utils/colors.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -18,22 +19,10 @@ class _HomePageState extends State<HomePage> {
   late PersistentTabController _controller;
 
   List pages = [
-    MainFoodPage(),
-    Container(
-      child: Center(
-        child: Text("Next page"),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Text("Next page"),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Text("Next page"),
-      ),
-    )
+      const MainFoodPage(),
+      const CartPage(),
+      const CartHistory(),
+      const AccountPage()
   ];
 
   void OnTapNav(int index) {
@@ -95,49 +84,40 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildScreens() {
     return [
       const MainFoodPage(),
-        Container(
-      child: Center(
-        child: Text("Next page"),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Text("Next page"),
-      ),
-    ),
-    const AccountPage()
-
+      const CartPage(),
+      const CartHistory(),
+      const AccountPage()
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
-        return [
-            PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.home),
-                title: ("Inicio"),
-                activeColorPrimary: CupertinoColors.activeBlue,
-                inactiveColorPrimary: CupertinoColors.systemGrey,
-            ),
-            PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.archivebox_fill),
-                title: ("Pedidos"),
-                activeColorPrimary: CupertinoColors.activeBlue,
-                inactiveColorPrimary: CupertinoColors.systemGrey,
-            ),
-              PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.cart_fill),
-                title: ("Carrito"),
-                activeColorPrimary: CupertinoColors.activeBlue,
-                inactiveColorPrimary: CupertinoColors.systemGrey,
-            ),
-              PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.person),
-                title: ("Perfil"),
-                activeColorPrimary: CupertinoColors.activeBlue,
-                inactiveColorPrimary: CupertinoColors.systemGrey,
-            ),
-        ];
-    }
+    return [
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.home),
+        title: ("Inicio"),
+        activeColorPrimary: AppColors.yellowColor,
+        inactiveColorPrimary: AppColors.mainColor,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.archivebox_fill),
+        title: ("Pedidos"),
+        activeColorPrimary: AppColors.yellowColor,
+        inactiveColorPrimary: AppColors.mainColor,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.cart_fill),
+        title: ("Carrito"),
+        activeColorPrimary: AppColors.yellowColor,
+        inactiveColorPrimary: AppColors.mainColor,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.person),
+        title: ("Perfil"),
+        activeColorPrimary: AppColors.yellowColor,
+        inactiveColorPrimary: AppColors.mainColor,
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -160,19 +140,19 @@ class _HomePageState extends State<HomePage> {
       ),
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: ItemAnimationProperties(
+      itemAnimationProperties: const ItemAnimationProperties(
         // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
-      screenTransitionAnimation: ScreenTransitionAnimation(
+      screenTransitionAnimation: const ScreenTransitionAnimation(
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
       navBarStyle:
-          NavBarStyle.style1, // Choose the nav bar style with this property.
+          NavBarStyle.style13, // Choose the nav bar style with this property.
     );
   }
 }

@@ -8,4 +8,8 @@ class AppConstants {
 
   static const String TOKEN="FoodDelivery";
 
+
+    static const CART_LIST="cart-list";
+  static const CART_HISTORY_LIST="cart-history-list";
+
 }

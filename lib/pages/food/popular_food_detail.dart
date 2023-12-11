@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_application/controllers/popular_product_controller.dart';
-import 'package:food_delivery_application/pages/home/main_food_page.dart';
 import 'package:food_delivery_application/routes/route_helper.dart';
 import 'package:food_delivery_application/utils/colors.dart';
 import 'package:food_delivery_application/utils/dimensions.dart';
@@ -11,7 +10,8 @@ import 'package:food_delivery_application/widgets/expandable_text_widget.dart';
 import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
-  const PopularFoodDetail({super.key});
+
+  PopularFoodDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class PopularFoodDetail extends StatelessWidget {
                 child: Container(
                   width: double.maxFinite,
                   height: Dimensions.popularFoodImgSize,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/image/food2.jpg')),
@@ -43,7 +43,7 @@ class PopularFoodDetail extends StatelessWidget {
                   children: [
                     GestureDetector(
                         onTap: () {
-                          Get.to(() => MainFoodPage());
+                           Get.toNamed(RouteHelper.getInitial());
                         },
                         child: const AppIcon(icon: Icons.arrow_back_ios)),
                     const AppIcon(icon: Icons.shopping_cart_outlined),
@@ -70,13 +70,13 @@ class PopularFoodDetail extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AppColumn(text: "Chinese Side"),
+                      const AppColumn(text: "Chinese Side"),
                       SizedBox(
                         height: Dimensions.height20,
                       ),
-                      BigText(text: "Introduce"),
+                      BigText(text: "Información"),
                       SizedBox(height: Dimensions.height20),
-                      Expanded(
+                      const Expanded(
                           child: SingleChildScrollView(
                               child: ExpandableTextWidget(
                                   text:
@@ -118,7 +118,7 @@ class PopularFoodDetail extends StatelessWidget {
                         onTap: () {
                           popularProduct.setQuantity(false);
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.remove,
                           color: AppColors.signColor,
                         ),
@@ -134,7 +134,7 @@ class PopularFoodDetail extends StatelessWidget {
                         onTap: () {
                           popularProduct.setQuantity(true);
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                           color: AppColors.signColor,
                         ),
@@ -168,3 +168,6 @@ class PopularFoodDetail extends StatelessWidget {
         }));
   }
 }
+
+
+

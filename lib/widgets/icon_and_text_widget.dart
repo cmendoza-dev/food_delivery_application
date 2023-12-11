@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_application/utils/dimensions.dart';
 import 'package:food_delivery_application/widgets/small_text.dart';
 
-class IconAndTextWigtet extends StatelessWidget {
+class IconAndTextWidget extends StatelessWidget {
   final IconData icon;
   final String text;
   final Color iconColor;
 
-  const IconAndTextWigtet({super.key, required this.icon, required this.text,  required this.iconColor});
+  const IconAndTextWidget({super.key, required this.icon, required this.text,  required this.iconColor});
 
   @override
   Widget build(BuildContext context) {

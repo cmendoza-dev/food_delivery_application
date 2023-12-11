@@ -49,15 +49,15 @@ class AppColumn extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        IconAndTextWigtet(
+                        IconAndTextWidget(
                             icon: Icons.circle_sharp,
                             text: "Normal",
                             iconColor: AppColors.iconColor1),
-                        IconAndTextWigtet(
+                        IconAndTextWidget(
                             icon: Icons.location_on,
                             text: "1.7km",
                             iconColor: AppColors.mainColor),
-                        IconAndTextWigtet(
+                        IconAndTextWidget(
                             icon: Icons.access_time_rounded,
                             text: "32min",
                             iconColor: AppColors.iconColor2),
