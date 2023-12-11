@@ -29,88 +29,88 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       category: '',
       imagePath: 'assets/image/ceviche.jpg',
     ),
-        FoodItem(
+    FoodItem(
       name: 'Lomo Saltado',
       category: '',
       imagePath: 'assets/image/lomo-saltado.jpg',
     ),
-        FoodItem(
+    FoodItem(
       name: 'Ají de Gallina',
       category: '',
       imagePath: 'assets/image/aji-de-gallina.jpg',
     ),
-        FoodItem(
+    FoodItem(
       name: 'Causa Limeña',
       category: '',
       imagePath: 'assets/image/causa-limena.jpg',
     ),
-        FoodItem(
+    FoodItem(
       name: 'Pachamanca',
       category: '',
       imagePath: 'assets/image/pachamanca.jpg',
     ),
-        FoodItem(
+    FoodItem(
       name: 'Arroz con Pollo',
       category: '',
       imagePath: 'assets/image/arroz-con-pollo.jpg',
     ),
-    // Agrega más objetos FoodItem según sea necesario
   ];
 
-    final List<FoodItem> recommendedItems = [
+  final List<FoodItem> recommendedItems = [
     FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food1.jpg',
+      name: 'Tallarines a la Huancaína',
+      category:
+          'Derivado de la papa a la huancaína, este plato es considerado como uno de los más ricos. A simple vista es un plato sencillo, ya que consiste en pasta bañada de salsa a la huancaína, la cual es preparada con queso fresco y ají amarillo, pero es justamente en el agregado de esta salsa lo que hace que la pasta o cualquier tallarín que se utilice adquiera un sabor interesante.',
+      imagePath: 'assets/image/tallarines-a-la-huancaina.jpg',
     ),
-        FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food2.jpg',
+    FoodItem(
+      name: 'Aguadito',
+      category:
+          'A la lista se suma un plato que es querido por muchos, el Aguadito. El cual consiste en una sopa de pollo espesa con arroz y otros vegetales. De una coloración verde debida al uso significativo de culantro en la sopa, es consumido tradicionalmente en invierno.',
+      imagePath: 'assets/image/aguadito.jpg',
     ),
-        FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food3.jpg',
+    FoodItem(
+      name: 'Tacu Tacu',
+      category:
+          'Nuestra lista no podía estar completa sin mencionar al Tacu Tacu, plato criollo que consiste en arroz cocido, menestras y sofrito a base de ají amarillo. Los cuales se mezclan hasta obtener una masa bajo el calor de la sartén.',
+      imagePath: 'assets/image/tacu-tacu.jpg',
     ),
-        FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food4.jpg',
+    FoodItem(
+      name: 'Suspiro limeño',
+      category: 'Tiene su origen en la capital de Perú. Se trata de una crema que se llama manjar blanco y lleva esencia de vainilla. Al final, se coloca un merengue encima, que suele ser decorado con un poco de canela.',
+      imagePath: 'assets/image/suspiro-limeno.jpg',
     ),
-        FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food5.jpg',
+    FoodItem(
+      name: 'Anticuchos',
+      category: 'Son tan tradicionales que eran preparados por los incas. Se trata del corazón de res cortado en trozos y sazonado con diferentes ingredientes, como ajo, comino, jugo de limón, cebollas o vinagre.',
+      imagePath: 'assets/image/anticuchos.jpg',
     ),
-        FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food6.jpg',
+    FoodItem(
+      name: 'Pollo a la Brasa',
+      category: 'Es un plato que consiste en pollo asado al carbón a través de un sistema rotatorio que permite una cocción uniforme. Es acompañado de papas fritas y actualmente es un ícono cultural peruano.',
+      imagePath: 'assets/image/pollo-a-la-brasa.jpg',
     ),
-            FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food7.jpg',
+    FoodItem(
+      name: 'Arroz chaufa',
+      category: 'Uno de los platos más conocidos de la cocina chifa, es decir, de la fusión entre la cocina china.',
+      imagePath: 'assets/image/arroz-chaufa.jpg',
     ),
-            FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food7.jpg',
+    FoodItem(
+      name: 'Chupe de Camarones',
+      category: 'Un chupe de camarones para chuparte los dedos. Esta frase calza perfectamente con el sabor y la sazón de este plato. Representa al Perú y a la ciudad de Arequipa. Entre los ingredientes tenemos: camarones, arroz, arvejas, ají panca, huevo, queso fresco, leche evaporada, cebolla, orégano y especias.',
+      imagePath: 'assets/image/chupe-de-camarones.jpg',
     ),
-            FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food7.jpg',
+    FoodItem(
+      name: 'Carapulcra Con Sopa Seca',
+      category: 'Su sazón original es de Chincha y es un plato que viene cautivando el mercado extranjero por su exótica combinación.',
+      imagePath: 'assets/image/carapulcra.jpg',
     ),
-            FoodItem(
-      name: 'Nutritious fruit meal in China',
-      category: 'Chinese Side',
-      imagePath: 'assets/image/food7.jpg',
+    FoodItem(
+      name: 'Chicharrón de Chanco',
+      category: 'Este viene acompañado de camote frito y salsa criolla.',
+      imagePath: 'assets/image/chicarron-de-chancho.jpg',
     ),
-    // Agrega más objetos FoodItem según sea necesario
   ];
-
 
   @override
   void initState() {

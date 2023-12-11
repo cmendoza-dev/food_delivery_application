@@ -52,7 +52,7 @@ class AccountPage extends StatelessWidget {
                         iconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "Manuel")
+                      bigText: BigText(text: "Nombres")
                       ),
                   SizedBox(
                     width: Dimensions.height30,
@@ -66,7 +66,7 @@ class AccountPage extends StatelessWidget {
                         iconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "+51 953154791")),
+                      bigText: BigText(text: "+51 911115231")),
                   SizedBox(
                     width: Dimensions.height30,
                   ),
@@ -79,7 +79,7 @@ class AccountPage extends StatelessWidget {
                         iconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "cmendoza@tecsup.edu.com")),
+                      bigText: BigText(text: "example@tecsup.edu.com")),
                   SizedBox(
                     width: Dimensions.height20,
                   ),

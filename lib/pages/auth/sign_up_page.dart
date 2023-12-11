@@ -152,6 +152,7 @@ class SignUpPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: CircleAvatar(
                           radius: Dimensions.radius30,
+                          backgroundColor: Colors.white,
                           backgroundImage:
                               AssetImage("assets/image/${signUpImages[index]}"),
                         ),
