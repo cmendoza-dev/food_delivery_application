@@ -23,10 +23,10 @@ class RecommendedFoodDetail extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: (){
-                      Get.toNamed(RouteHelper.getInitial());
-                    },
-                    child: AppIcon(icon: Icons.clear)),
+                      onTap: () {
+                        Get.toNamed(RouteHelper.getInitial());
+                      },
+                      child: AppIcon(icon: Icons.clear)),
                   AppIcon(icon: Icons.shopping_cart_outlined),
                 ]),
             bottom: PreferredSize(
@@ -125,24 +125,29 @@ class RecommendedFoodDetail extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.radius20),
                       color: Colors.white),
-                  child: Icon(Icons.favorite,
-                  color: AppColors.mainColor,
-                 
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                      top: Dimensions.height20,
-                      bottom: Dimensions.height20,
-                      left: Dimensions.width20,
-                      right: Dimensions.width20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.radius20),
+                  child: Icon(
+                    Icons.favorite,
                     color: AppColors.mainColor,
                   ),
-                  child: BigText(
-                    text: "\$10 | Add to card",
-                    color: Colors.white,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.getSignInPage());
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: Dimensions.height20,
+                        bottom: Dimensions.height20,
+                        left: Dimensions.width20,
+                        right: Dimensions.width20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.radius20),
+                      color: AppColors.mainColor,
+                    ),
+                    child: BigText(
+                      text: "\$10 | Add to card",
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],

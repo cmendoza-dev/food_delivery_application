@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_application/routes/route_helper.dart';
 import 'package:food_delivery_application/utils/colors.dart';
 import 'package:food_delivery_application/utils/dimensions.dart';
 import 'package:food_delivery_application/widgets/account_widget.dart';
 import 'package:food_delivery_application/widgets/app_icon.dart';
 import 'package:food_delivery_application/widgets/big_text.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -34,7 +36,7 @@ class AccountPage extends StatelessWidget {
             size: Dimensions.height15 * 10,
           ),
           SizedBox(
-            width: Dimensions.height30,
+            width: Dimensions.height45,
           ),
 
           Expanded(
@@ -90,7 +92,7 @@ class AccountPage extends StatelessWidget {
                         iconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "Fill in your address")),
+                      bigText: BigText(text: "Complete su dirección")),
                   SizedBox(
                     width: Dimensions.height20,
                   ),
@@ -103,10 +105,30 @@ class AccountPage extends StatelessWidget {
                         iconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "<T >")),
+                      bigText: BigText(text: "Mensaje")),
                   SizedBox(
                     width: Dimensions.height20,
                   ),
+                                    //Logout
+                  GestureDetector(
+                    onTap: (){
+                      Get.toNamed(RouteHelper.getSignInPage());
+                    },
+                    child: AccountWidget(
+                        appIcon: AppIcon(
+                          icon: Icons.logout,
+                          backgroundColor: Colors.redAccent,
+                          iconColor: Colors.white,
+                          iconSize: Dimensions.height10 * 5 / 2,
+                          size: Dimensions.height10 * 5,
+                        ),
+                        bigText: BigText(text: "Salir")),
+                  ),
+                  SizedBox(
+                    width: Dimensions.height20,
+                  ),
+
+
                 ],
               ),
             ),

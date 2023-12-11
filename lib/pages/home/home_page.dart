@@ -95,7 +95,11 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildScreens() {
     return [
       const MainFoodPage(),
-    const SignUpPage(),
+        Container(
+      child: Center(
+        child: Text("Next page"),
+      ),
+    ),
     Container(
       child: Center(
         child: Text("Next page"),

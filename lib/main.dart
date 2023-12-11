@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
     Get.find<PopularProductController>().getPopularProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: SignInPage(),
       initialRoute: RouteHelper.getSplashPage(),
       getPages: RouteHelper.routes,
       
