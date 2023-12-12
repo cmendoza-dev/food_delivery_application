@@ -77,7 +77,7 @@ class CartPage extends StatelessWidget {
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image:
-                                          AssetImage("assets/image/food1.jpg"),
+                                          AssetImage("assets/image/tallarines-a-la-huancaina.jpg"),
                                     ),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.radius20),
@@ -96,14 +96,14 @@ class CartPage extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      BigText(text: "Bitter Orange Juice"),
-                                      SmallText(text: "Spicy"),
+                                      BigText(text: "Tallarines a la Huancaína"),
+                                      SmallText(text: "Spaghetti"),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           BigText(
-                                            text: "\$ 33.0",
+                                            text: "\$ 18.0",
                                             color: Colors.redAccent,
                                           ),
                                           Container(

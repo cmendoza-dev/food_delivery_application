@@ -10,11 +10,17 @@ import 'package:food_delivery_application/widgets/expandable_text_widget.dart';
 import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
-
-  PopularFoodDetail({super.key});
+  final Map<String, dynamic>? data; // Usar ? para permitir nulos
+  const PopularFoodDetail({Key? key, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Después
+    var nombre = data?["nombre"] ?? "Ceviche";
+    var imagen = data?["imagen"] ?? 'assets/image/ceviche.jpg';
+    var descripcion = data?["descripcion"] ??
+        "Es un plato consistente en carne marinada pescado, mariscos o ambos en aliños cítricos, reconocido por la Unesco como expresión de la cocina tradicional peruana y patrimonio cultural inmaterial de la humanidad.";
+
     Get.find<PopularProductController>().initProduct();
     return Scaffold(
         backgroundColor: Colors.white,
@@ -27,10 +33,9 @@ class PopularFoodDetail extends StatelessWidget {
                 child: Container(
                   width: double.maxFinite,
                   height: Dimensions.popularFoodImgSize,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/image/food2.jpg')),
+                        fit: BoxFit.cover, image: AssetImage(imagen)),
                   ),
                 )),
             //icon widgets
@@ -43,7 +48,7 @@ class PopularFoodDetail extends StatelessWidget {
                   children: [
                     GestureDetector(
                         onTap: () {
-                           Get.toNamed(RouteHelper.getInitial());
+                          Get.toNamed(RouteHelper.getInitial());
                         },
                         child: const AppIcon(icon: Icons.arrow_back_ios)),
                     const AppIcon(icon: Icons.shopping_cart_outlined),
@@ -70,17 +75,15 @@ class PopularFoodDetail extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const AppColumn(text: "Chinese Side"),
+                      AppColumn(text: nombre),
                       SizedBox(
                         height: Dimensions.height20,
                       ),
                       BigText(text: "Información"),
                       SizedBox(height: Dimensions.height20),
-                      const Expanded(
+                      Expanded(
                           child: SingleChildScrollView(
-                              child: ExpandableTextWidget(
-                                  text:
-                                      "Arroz con pollo es un plato tradicional de la cocina latinoamericana que consiste en arroz cocido con pollo, generalmente sazonado con ajo, cebolla, pimientos, y especias como comino y azafrán. El pollo se cocina junto con el arroz, creando un plato sabroso y reconfortante."))),
+                              child: ExpandableTextWidget(text: descripcion))),
                     ],
                   ),
                 )),
@@ -168,6 +171,3 @@ class PopularFoodDetail extends StatelessWidget {
         }));
   }
 }
-
-
-

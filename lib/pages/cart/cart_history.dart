@@ -11,12 +11,12 @@ class CartHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Información estática
-    List<String> dates = ["09/12/2023", "08/12/2023", "07/12/2023"];
+    List<String> dates = ["12/12/2023", "11/12/2023", "11/12/2023"];
     List<int> itemsPerOrder = [3, 2, 1]; // Cantidad de elementos por pedido
     List<List<String>> imagePaths = [
-      ['assets/image/food1.jpg', 'assets/image/food2.jpg', 'assets/image/food3.jpg'],
-      ['assets/image/food4.jpg', 'assets/image/food5.jpg'],
-      ['assets/image/food6.jpg']
+      ['assets/image/ceviche.jpg', 'assets/image/pollo-a-la-brasa.jpg', 'assets/image/anticuchos.jpg'],
+      ['assets/image/tacu-tacu.jpg', 'assets/image/tallarines-a-la-huancaina.jpg'],
+      ['assets/image/suspiro-limeno.jpg']
     ];
 
     return Scaffold(
@@ -30,11 +30,11 @@ class CartHistory extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                BigText(text: "Cart History", color: Colors.white),
-                AppIcon(
+                BigText(text: "Tu Carrito", color: Colors.white),
+                const AppIcon(
                   icon: Icons.shopping_cart_outlined,
-                  iconColor: Colors.blue,
-                  backgroundColor: Colors.yellow,
+                  iconColor: Colors.white,
+                  backgroundColor: AppColors.mainColor,
                 ),
               ],
             ),
@@ -77,7 +77,7 @@ class CartHistory extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   SmallText(text: "Total", color: Colors.black),
-                                  BigText(text: itemsPerOrder[index].toString() + " Items", color: Colors.black),
+                                  BigText(text: itemsPerOrder[index].toString() + " comida(s)", color: Colors.black),
                                   Container(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: Dimensions.width10,
@@ -87,7 +87,7 @@ class CartHistory extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(Dimensions.radius15 / 3),
                                       border: Border.all(width: 1, color: Colors.blue),
                                     ),
-                                    child: SmallText(text: "one more", color: Colors.blue),
+                                    child: SmallText(text: "uno más", color: Colors.blue),
                                   ),
                                 ],
                               ),

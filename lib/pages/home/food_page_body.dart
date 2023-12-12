@@ -26,7 +26,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   final List<FoodItem> foodItems = [
     FoodItem(
       name: 'Ceviche',
-      category: '',
+      category: 'Es un plato consistente en carne marinada pescado, mariscos o ambos en aliños cítricos, reconocido por la Unesco como expresión de la cocina tradicional peruana y patrimonio cultural inmaterial de la humanidad.​​​',
       imagePath: 'assets/image/ceviche.jpg',
     ),
     FoodItem(
@@ -77,32 +77,38 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     ),
     FoodItem(
       name: 'Suspiro limeño',
-      category: 'Tiene su origen en la capital de Perú. Se trata de una crema que se llama manjar blanco y lleva esencia de vainilla. Al final, se coloca un merengue encima, que suele ser decorado con un poco de canela.',
+      category:
+          'Tiene su origen en la capital de Perú. Se trata de una crema que se llama manjar blanco y lleva esencia de vainilla. Al final, se coloca un merengue encima, que suele ser decorado con un poco de canela.',
       imagePath: 'assets/image/suspiro-limeno.jpg',
     ),
     FoodItem(
       name: 'Anticuchos',
-      category: 'Son tan tradicionales que eran preparados por los incas. Se trata del corazón de res cortado en trozos y sazonado con diferentes ingredientes, como ajo, comino, jugo de limón, cebollas o vinagre.',
+      category:
+          'Son tan tradicionales que eran preparados por los incas. Se trata del corazón de res cortado en trozos y sazonado con diferentes ingredientes, como ajo, comino, jugo de limón, cebollas o vinagre.',
       imagePath: 'assets/image/anticuchos.jpg',
     ),
     FoodItem(
       name: 'Pollo a la Brasa',
-      category: 'Es un plato que consiste en pollo asado al carbón a través de un sistema rotatorio que permite una cocción uniforme. Es acompañado de papas fritas y actualmente es un ícono cultural peruano.',
+      category:
+          'Es un plato que consiste en pollo asado al carbón a través de un sistema rotatorio que permite una cocción uniforme. Es acompañado de papas fritas y actualmente es un ícono cultural peruano.',
       imagePath: 'assets/image/pollo-a-la-brasa.jpg',
     ),
     FoodItem(
       name: 'Arroz chaufa',
-      category: 'Uno de los platos más conocidos de la cocina chifa, es decir, de la fusión entre la cocina china.',
+      category:
+          'Uno de los platos más conocidos de la cocina chifa, es decir, de la fusión entre la cocina china.',
       imagePath: 'assets/image/arroz-chaufa.jpg',
     ),
     FoodItem(
       name: 'Chupe de Camarones',
-      category: 'Un chupe de camarones para chuparte los dedos. Esta frase calza perfectamente con el sabor y la sazón de este plato. Representa al Perú y a la ciudad de Arequipa. Entre los ingredientes tenemos: camarones, arroz, arvejas, ají panca, huevo, queso fresco, leche evaporada, cebolla, orégano y especias.',
+      category:
+          'Un chupe de camarones para chuparte los dedos. Esta frase calza perfectamente con el sabor y la sazón de este plato. Representa al Perú y a la ciudad de Arequipa. Entre los ingredientes tenemos: camarones, arroz, arvejas, ají panca, huevo, queso fresco, leche evaporada, cebolla, orégano y especias.',
       imagePath: 'assets/image/chupe-de-camarones.jpg',
     ),
     FoodItem(
       name: 'Carapulcra Con Sopa Seca',
-      category: 'Su sazón original es de Chincha y es un plato que viene cautivando el mercado extranjero por su exótica combinación.',
+      category:
+          'Su sazón original es de Chincha y es un plato que viene cautivando el mercado extranjero por su exótica combinación.',
       imagePath: 'assets/image/carapulcra.jpg',
     ),
     FoodItem(
@@ -128,6 +134,24 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     super.dispose();
   }
 
+
+  void _navigateToDetails(List<FoodItem> items, double currentPage) {
+    int index = currentPage.round();
+    if (index >= 0 && index < items.length) {
+      FoodItem selectedFood = items[index];
+      Get.toNamed(
+        RouteHelper.getPopularFood(),
+        arguments: {
+          'nombre': selectedFood.name,
+          'imagen': selectedFood.imagePath,
+          'descripcion': selectedFood.category,
+        },
+      );
+    }
+  }
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -136,7 +160,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           height: Dimensions.pageView,
           child: GestureDetector(
             onTap: () {
-              Get.toNamed(RouteHelper.getPopularFood());
+              //Get.toNamed(RouteHelper.getPopularFood());
+              _navigateToDetails(foodItems, _currPageValue);
             },
             child: PageView.builder(
                 controller: pageController,
@@ -251,7 +276,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               SizedBox(height: Dimensions.height10),
                               SmallText(text: recommendedItems[index].category),
                               SizedBox(height: Dimensions.height10),
-                              Row(
+                              const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
